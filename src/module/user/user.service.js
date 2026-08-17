@@ -87,3 +87,15 @@ export let getUserByName = (userName) => {
         }
     }
 }
+// get all users from json file 
+export let getAllUsers = () => {
+    let data = readData()
+    if (data) {
+        return data
+    } else {
+        return {
+            message: "there is not user in json file "
+        }
+    }
+}
+
