@@ -35,13 +35,6 @@
         "age": 21
     },
     {
-        "id": 8,
-        "name": "Karim Ashraf",
-        "email": "karim.ashraf@example.com",
-        "password": "Pass8123",
-        "age": 23
-    },
-    {
         "id": 9,
         "name": "amr ahmed ",
         "email": "amr@gmail.com",
@@ -124,13 +117,19 @@
         "email": "mostafa@jmail.com",
         "password": "mostafa@123",
         "age": 21
-    }
- ,
+    },
     {
         "id": 20,
-        "name": "mostafa mahmoud",
-        "email": "mostafa@jmail.com",
-        "password": "mostafa@123",
+        "name": "taha mahmoud",
+        "email": "taha@jmail.com",
+        "password": "taha@123",
         "age": 213
+    },
+    {
+        "id": 19,
+        "name": "hllo",
+        "email": "hello@jmail.com",
+        "password": "hello@123",
+        "age": 3
     }
 ]

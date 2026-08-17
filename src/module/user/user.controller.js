@@ -11,7 +11,6 @@ router.post("/add-user", (req, res) => {
 // update user 
 router.patch("/update-user/:id", (req, res) => {
     let { id } = req.params
-    console.log(id);
     let data = updataData(id, req.body)
     res.json(data)
 })
@@ -34,7 +33,7 @@ router.get("/", (req, res) => {
 })
 // get user by age filter 
 router.get("/get-user-age-filter/:age", (req, res) => {
-    let {age}= req.params
+    let { age } = req.params
 
     let data = filterAge(age)
     res.json(data)

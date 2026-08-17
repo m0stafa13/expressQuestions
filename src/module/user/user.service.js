@@ -1,4 +1,4 @@
-//logic files 
+//logic file
 import fs from "fs"
 import path from "path"
 // function to read data from jason file 
