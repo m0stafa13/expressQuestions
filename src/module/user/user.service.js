@@ -98,10 +98,24 @@ export let getAllUsers = () => {
         }
     }
 }
-// filter user by min age
-export let filterAge = () => {
-    return null
+// filter user by age
+export let filterAge = (userAge) => {
+    let data = readData()
+    let filterAge = data.filter((user) => {
+        return user.age >= userAge
+    })
+    if (filterAge.length + 1 > 1) {
+        // sorting 
+        return {
+            filterAge
+        }
+    } else {
+        return {
+            message: "no user founded"
+        }
+    }
 }
+// get user by id 
 export let getUserById = (userId) => {
     let data = readData()
     let findUser = data.find((user) => {

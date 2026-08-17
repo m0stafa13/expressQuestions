@@ -125,4 +125,12 @@
         "password": "mostafa@123",
         "age": 21
     }
+ ,
+    {
+        "id": 20,
+        "name": "mostafa mahmoud",
+        "email": "mostafa@jmail.com",
+        "password": "mostafa@123",
+        "age": 213
+    }
 ]

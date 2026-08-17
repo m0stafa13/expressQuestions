@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addUser, deleteUser, getAllUsers, getUserById, getUserByName, updataData } from "./user.service.js";
+import { addUser, deleteUser, filterAge, getAllUsers, getUserById, getUserByName, updataData } from "./user.service.js";
 const router = Router()
 
 
@@ -30,6 +30,13 @@ router.get("/get-userBy-name", (req, res) => {
 // get all users 
 router.get("/", (req, res) => {
     let data = getAllUsers()
+    res.json(data)
+})
+// get user by age filter 
+router.get("/get-user-age-filter/:age", (req, res) => {
+    let {age}= req.params
+
+    let data = filterAge(age)
     res.json(data)
 })
 // get user by id 
