@@ -1,0 +1,73 @@
+//logic files 
+import fs from "fs"
+import path from "path"
+// function to read data from jason file 
+let readData = () => {
+    return JSON.parse(fs.readFileSync(path.resolve("./src/module/data/user.json"), "utf-8"))
+}
+// function to write data to json file 
+let writeData = (data) => {
+    return fs.writeFileSync(path.resolve("./src/module/data/user.json"), JSON.stringify(data), "utf-8")
+}
+
+// let add user 
+export let addUser = (userData) => {
+    let data = readData()
+    let { email, age, password, name } = userData
+    let findUser = data.find((user) => {
+        return user.email == email
+    })
+    if (findUser) {
+        return {
+            message: "user already exist"
+        }
+    } else {
+        let id = data.length + 1
+        data.push({ id, name, email, password, age })
+        writeData(data)
+        return {
+            message: "user added success.."
+        }
+    }
+}
+// update user data 
+export let updataData = (userId, userData) => {
+    let data = readData()
+    let findUser = data.find((user) => {
+        return user.id == userId
+    })
+    if (findUser) {
+        let { name, password, email, age } = userData
+        name ? findUser.name = name : null
+        password ? findUser.password = password : null
+        email ? findUser.email = email : null
+        age ? findUser.age = age : null
+        writeData(data)
+        return {
+            message: "user data updated successfully. "
+        }
+    } else {
+        return {
+            message: "user is not found "
+        }
+    }
+
+}
+// delete user from json 
+export let deleteUser = (userId) => {
+    let data = readData()
+    let userIndex = data.findIndex((user) => {
+        return user.id == userId
+    })
+    if (userIndex >= 0) {
+        data.splice(userIndex, 1)
+        writeData(data)
+        return {
+            message: "user deleted successfully.."
+        }
+    } else {
+        return {
+            message: "user not found"
+        }
+    }
+}
