@@ -98,4 +98,21 @@ export let getAllUsers = () => {
         }
     }
 }
+// filter user by min age
+export let filterAge = () => {
+    return null
+}
+export let getUserById = (userId) => {
+    let data = readData()
+    let findUser = data.find((user) => {
+        return user.id == userId
+    })
+    if (findUser) {
+        return userId
+    } else {
+        return {
+            message: "user id is not found "
+        }
+    }
+}
 
