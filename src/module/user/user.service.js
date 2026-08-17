@@ -108,7 +108,7 @@ export let getUserById = (userId) => {
         return user.id == userId
     })
     if (findUser) {
-        return userId
+        return findUser
     } else {
         return {
             message: "user id is not found "

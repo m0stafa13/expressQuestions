@@ -34,7 +34,7 @@ router.get("/", (req, res) => {
 })
 // get user by id 
 router.get("/get-user-byId/:id", (req, res) => {
-    let { id } = req.query
+    let { id } = req.params
     let data = getUserById(id)
     res.json(data)
 })
