@@ -1,0 +1,8 @@
+q1 - Event Loop ==> node js logic makes js work with async function or any async operation without stopping the code
+q2 - what is libuv ==> library node js use it to handle with async operation by create vertical threads the main thread who is handle this threads 
+q3 - by sending any async operation to libuv 
+q4 - call stack  ==>call stack stores and executes js functions currently running
+     event queue ==> event queue stores callbacks waiting to be executed
+     event loop  ==> event loop checks whether call stack is empty and moves waiting callbacks from queue to call stack
+q5 - 
+q6 - blocking code stops the main thread until operation finishes Non-blocking code starts operation and allows nodejs to continue executing other code
