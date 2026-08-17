@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addUser, deleteUser, updataData } from "./user.service.js";
+import { addUser, deleteUser, getUserByName, updataData } from "./user.service.js";
 const router = Router()
 
 
@@ -15,9 +15,16 @@ router.patch("/update-user/:id", (req, res) => {
     let data = updataData(id, req.body)
     res.json(data)
 })
+// delete user by id 
 router.delete("/delete-user", (req, res) => {
     let { id } = req.body
     let data = deleteUser(id)
+    res.json(data)
+})
+// get user by name 
+router.get("/get-userBy-name", (req, res) => {
+    let { name } = req.query
+    let data = getUserByName(name)
     res.json(data)
 })
 export default router

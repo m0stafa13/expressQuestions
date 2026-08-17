@@ -9,7 +9,6 @@ let readData = () => {
 let writeData = (data) => {
     return fs.writeFileSync(path.resolve("./src/module/data/user.json"), JSON.stringify(data), "utf-8")
 }
-
 // let add user 
 export let addUser = (userData) => {
     let data = readData()
@@ -68,6 +67,23 @@ export let deleteUser = (userId) => {
     } else {
         return {
             message: "user not found"
+        }
+    }
+}
+// get user by name 
+export let getUserByName = (userName) => {
+    let data = readData()
+    let findUser = data.find((user) => {
+        return user.name == userName
+    })
+    if (findUser) {
+        return {
+            message: "user found",
+            userData: findUser
+        }
+    } else {
+        return {
+            message: "user name is not found "
         }
     }
 }
